@@ -11,17 +11,15 @@ import java.time.Duration;
 public class CalculateDiscountsTest extends BaseTest {
     private MainPage mainPage;
     private SpecialOffersPage specialOffersPage;
-    private SpecialOffersPageSteps specialOffersPageSteps;
     @Test
     public void CalculateDiscountsTest() {
         mainPage = new MainPage();
-        mainPage.navigateToNewAndNoteworthy();
+        mainPage.hoverOnNewAndNoteworthy();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
         mainPage.clickToSpecialOffers();
         specialOffersPage = new SpecialOffersPage();
-        specialOffersPage.scrollDownToTheListOfOffers();
-        specialOffersPageSteps = new SpecialOffersPageSteps();
-        Assert.assertTrue(specialOffersPageSteps.validateCalculatingOfDiscounts());
+        specialOffersPage.scrollDownToListOfOffers();
+        Assert.assertTrue(new SpecialOffersPageSteps().validateCalculatingOfDiscounts());
     }
 }
 

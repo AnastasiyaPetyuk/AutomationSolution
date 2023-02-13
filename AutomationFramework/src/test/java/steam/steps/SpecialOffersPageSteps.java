@@ -3,22 +3,20 @@ package steam.steps;
 import framework.pageElements.ListOfElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import steam.pages.SpecialOffersPage;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class SpecialOffersPageSteps {
     public static final Logger logger = Logger.getLogger(MainPageSteps.class.getName());
-    private final ListOfElements<WebElement> listOfGameSale = new ListOfElements<>(By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]//div[contains(@class, \"StoreSaleDiscountBox\")]"));
-    private final ListOfElements<WebElement> listOfStartedPrice = new ListOfElements<>(By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]//div[contains(@class, \"StoreOriginalPrice\")]"));
-    private final ListOfElements<WebElement> listOfCurrentPrice = new ListOfElements<>(By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]//div[contains(@class, \"StoreSalePriceBox\")]"));
-
 
     public boolean validateCalculatingOfDiscounts() {
         logger.info("convert list of WebElements to ArrayList");
-        ArrayList<String> stringListOfSales = new ArrayList<>(listOfGameSale.convertListOfWebElementsToListOfStrings());
-        ArrayList<String> stringListOfStartedPrice = new ArrayList<>(listOfStartedPrice.convertListOfWebElementsToListOfStrings());
-        ArrayList<String> stringListOfCurrentPrice = new ArrayList<>(listOfCurrentPrice.convertListOfWebElementsToListOfStrings());
+        SpecialOffersPage specialOffersPage = new SpecialOffersPage();
+        ArrayList<String> stringListOfSales = new ArrayList<>(specialOffersPage.getTextFromListOfGameSale());
+        ArrayList<String> stringListOfStartedPrice = new ArrayList<>(specialOffersPage.getTextFromListOfStartedPrice());
+        ArrayList<String> stringListOfCurrentPrice = new ArrayList<>(specialOffersPage.getTextFromListOfCurrentPrice());
 
         logger.info("validate discounts");
         for(int i = 0; i < 12; i++) {

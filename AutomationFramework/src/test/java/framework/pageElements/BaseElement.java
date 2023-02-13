@@ -5,7 +5,6 @@ import framework.utils.MyWaiters;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,14 +28,6 @@ public abstract class BaseElement {
     public List<String> getAllText(String locator, String s) {
         List<WebElement> list = Browser.getDriver().findElements(By.xpath(String.format(locator, s)));
         return list.stream().map(WebElement::getText).collect(Collectors.toList());
-    }
-    public List<String> convertListOfWebElementsToListOfStrings() {
-        List<WebElement> listOfWebElements = Browser.getDriver().findElements(locator);
-        List<String> stringListOfSales = new ArrayList<>();
-        for (WebElement element : listOfWebElements) {
-            stringListOfSales.add(element.getText());
-        }
-        return stringListOfSales;
     }
 
     public boolean isDisplayed() {

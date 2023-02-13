@@ -10,12 +10,9 @@ public class ValidateCategoriesTest extends BaseTest{
     @Test
     public void validateCategoriesTest() {
         MainPage mainPage = new MainPage();
-        mainPage.navigateToCategories();
+        mainPage.hoverOnCategories();
         mainPageSteps = new MainPageSteps();
-        mainPageSteps.waitingOfDisplayedListsOfCategories();
-        Assert.assertTrue(mainPageSteps.equalsListOfCategories("action"));
-        Assert.assertTrue(mainPageSteps.equalsListOfCategories("rpg"));
-        Assert.assertTrue(mainPageSteps.equalsListOfCategories("strategy"));
+        Assert.assertTrue(mainPageSteps.equalsListOfCategories());
     }
 
 }
