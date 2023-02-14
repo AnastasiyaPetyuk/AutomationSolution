@@ -21,12 +21,12 @@ public class SpecialOffersPage extends BasePage {
         allItemsCategory.scrollDownToElement();
     }
     public List<String> getTextFromListOfGameSale() {
-        return listOfGameSale.getListOfTexts();
+        return listOfGameSale.getAllText();
     }
     public List<String> getTextFromListOfStartedPrice() {
-        return listOfStartedPrice.getListOfTexts();
+        return listOfStartedPrice.getAllText();
     }
     public List<String> getTextFromListOfCurrentPrice() {
-        return listOfCurrentPrice.getListOfTexts();
+        return listOfCurrentPrice.getAllText();
     }
 }

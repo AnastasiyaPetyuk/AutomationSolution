@@ -6,16 +6,13 @@ import steam.pages.MainPage;
 import steam.pages.SpecialOffersPage;
 import steam.steps.SpecialOffersPageSteps;
 
-import java.time.Duration;
-
 public class CalculateDiscountsTest extends BaseTest {
     private MainPage mainPage;
     private SpecialOffersPage specialOffersPage;
-    @Test
+    @Test(description = "ST_ID 2: Verify that Special Offers page calculates discounts correctly")
     public void CalculateDiscountsTest() {
         mainPage = new MainPage();
         mainPage.hoverOnNewAndNoteworthy();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
         mainPage.clickToSpecialOffers();
         specialOffersPage = new SpecialOffersPage();
         specialOffersPage.scrollDownToListOfOffers();

@@ -1,5 +1,6 @@
 package steam.pages;
 
+import framework.constants.Regex;
 import framework.pageElements.Label;
 import framework.pageElements.ListOfElements;
 import org.openqa.selenium.By;
@@ -18,7 +19,7 @@ public class GamePage {
         return  reviewsStatusOfGame.getText();
     }
     public String getTextFromPriceOfGame() {
-        return priceOfGame.getText().toString().replaceAll("[aA-zZ, \s]", "");
+        return priceOfGame.getText().toString().replaceAll(Regex.onlyLettersRegex, "");
     }
     public List<String> getTextFromListOfTagsOfGame() {
         return listOfTagsOfGame.getListOfTexts().subList(0, 3);

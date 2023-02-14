@@ -1,8 +1,6 @@
 package steam.steps;
 
-import framework.pageElements.ListOfElements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import framework.constants.Regex;
 import steam.pages.SpecialOffersPage;
 
 import java.util.ArrayList;
@@ -21,9 +19,9 @@ public class SpecialOffersPageSteps {
         logger.info("validate discounts");
         for(int i = 0; i < 12; i++) {
             logger.info("discount of " + (i+1) + " game" );
-            double sale = Double.parseDouble(stringListOfSales.get(i).toString().replaceAll("[^0-9]", ""));
-            double startedPrice = Double.parseDouble(stringListOfStartedPrice.get(i).toString().replaceAll("[^0-9.,]", "").replaceAll(",", "."));
-            String currentPrice = stringListOfCurrentPrice.get(i).toString().replaceAll("[^0-9.,]", "").replaceAll(",", ".");
+            double sale = Double.parseDouble(stringListOfSales.get(i).toString().replaceAll(Regex.onlyNumberRegex, ""));
+            double startedPrice = Double.parseDouble(stringListOfStartedPrice.get(i).toString().replaceAll(Regex.onlyNumberDotCommaRegex, "").replaceAll(",", "."));
+            String currentPrice = stringListOfCurrentPrice.get(i).toString().replaceAll(Regex.onlyNumberDotCommaRegex, "").replaceAll(",", ".");
 
             double trueCurrentPriceDouble = (double) Math.round((startedPrice*(1-sale/100)) * 100) / 100;
             String trueCurrentPrice = String.format("%.2f", trueCurrentPriceDouble);
