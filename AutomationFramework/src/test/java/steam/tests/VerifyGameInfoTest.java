@@ -15,7 +15,7 @@ public class VerifyGameInfoTest extends BaseTest{
     public void verifyGameInfoTest() {
         mainPage.scrollDownToLabelNewAndTrending();
         GameInfo gameInfoFromMainPage = mainPageSteps.getGameInfoFromMainPage().getGameInfo();
-        GameInfo gameInfoFromGamePage = gamePageSteps.getGameInfoFromGamePage().getGameInfo();
+        GameInfo gameInfoFromGamePage = gamePageSteps.getGameInfoFromGamePage();
         Assert.assertTrue(gameInfoFromMainPage.equals(gameInfoFromGamePage));
     }
 }

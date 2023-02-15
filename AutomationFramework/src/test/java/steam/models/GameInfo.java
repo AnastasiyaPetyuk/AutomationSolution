@@ -2,7 +2,6 @@ package steam.models;
 
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 @Data
@@ -18,12 +17,39 @@ public class GameInfo {
         this.price = price;
         this.tags = tags;
     }
+    public GameInfo getGameInfo() {
+        String name = this.name;
+        String reviewStatus = this.reviewStatus;
+        String price = this.price;
+        List<String> tags = this.tags;
+
+        return new GameInfo(name, reviewStatus, price, tags);
+    }
+    public String getName() {
+        return name;
+    }
+
+    public String getReviewStatus() {
+        return reviewStatus;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+    public List<String> getTags() {
+        return tags;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GameInfo that = (GameInfo) o;
-        return Objects.equals(name, that.name) && Objects.equals(reviewStatus, that.reviewStatus) && Objects.equals(price, that.price) && Objects.equals(tags.subList(0, 3), that.tags.subList(0, 3));
+        System.out.println(name +  " --- " + that.name);
+        System.out.println(reviewStatus + " --- " + that.reviewStatus);
+        System.out.println(price + " --- " + that.price);
+        System.out.println(tags + " --- " + that.tags);
+        System.out.println(tags.size() + " --- " + that.tags.size());
+        return Objects.equals(name, that.name) && Objects.equals(reviewStatus, that.reviewStatus) && Objects.equals(price, that.price) && Objects.equals(tags.subList(0, 2), that.tags.subList(0, 2));
     }
     @Override
     public int hashCode() {

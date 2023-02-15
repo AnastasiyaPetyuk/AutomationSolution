@@ -1,7 +1,7 @@
 package steam.steps;
 
 import framework.utils.GetProperties;
-import steam.entity.GameEntity;
+import steam.models.GameInfo;
 import steam.pages.MainPage;
 
 import java.util.ArrayList;
@@ -30,15 +30,15 @@ public class MainPageSteps {
         return true;
     }
 
-    public GameEntity getGameInfoFromMainPage() {
+    public GameInfo getGameInfoFromMainPage() {
         logger.info("Observe info of the game from the list");
         MainPage mainPage = new MainPage();
         ArrayList<String> listOfTags = new ArrayList<>(mainPage.getTextFromListOfTagsOfFirstElement());
         mainPage.hoverOnFirstGameInList();
         mainPage.hoverOnTabPreviewOfFirstElement();
-        GameEntity gameEntity = new GameEntity(mainPage.getTextFromNameOfFirstElement(), mainPage.getTextFromReviewsStatusOfFirstElement(), mainPage.getTextFromPriceOfFirstElement(), listOfTags);
+        GameInfo gameInfo = new GameInfo(mainPage.getTextFromNameOfFirstElement(), mainPage.getTextFromReviewsStatusOfFirstElement(), mainPage.getTextFromPriceOfFirstElement(), listOfTags);
         logger.info("Click on game and to the game’s page");
         mainPage.clickOnFirstGameInList();
-        return gameEntity;
+        return gameInfo;
     }
 }

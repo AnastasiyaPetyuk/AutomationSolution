@@ -19,8 +19,7 @@ public class ListOfElements<T> extends BaseElement{
         super(partOfLocator);
     }
 
-        // this.locator = By.xpath(String.format(partOfLocator, s));
-    public List<String> getListOfTexts() {
+    public List<String> getListOfText() { //
         List<WebElement> listOfWebElements = Browser.getDriver().findElements(locator);
         List<String> stringList = new ArrayList<>();
         for (WebElement element : listOfWebElements) {

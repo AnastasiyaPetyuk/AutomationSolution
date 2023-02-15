@@ -24,7 +24,7 @@ public class MainPage extends BasePage {
     private final Label tabPreviewOfFirstElement = new Label(By.xpath("//div[@class=\"home_rightcol\"]"));
     private final Label nameOfFirstElement = new Label(By.xpath("//div[@class=\"tab_preview focus\"]/h2"));
     private final ListOfElements listOfTagsOfFirstElement = new ListOfElements(By.xpath("//div[@class='tags']/a"));
-    private final Label reviewsStatusOfFirstElement = new Label(By.xpath("//span[contains(@class,'game_review_summary positive')]"));
+    private final Label reviewsStatusOfFirstElement = new Label(By.xpath("//span[contains(@class,'game_review_summary')]"));
     private final Label priceOfFirstElement = new Label(By.xpath("//div[contains(@class,\"tab_item\")]//div[@class='discount_final_price']"));
     private final By arcadeAndRhythmLocator = By.xpath("//div[@data-genre-group='action'][2]/following-sibling::div[1]/a");
 
@@ -76,6 +76,7 @@ public class MainPage extends BasePage {
         return priceOfFirstElement.getText().toString().replaceAll(Regex.onlyLettersRegex, "");
     }
     public List<String> getTextFromListOfTagsOfFirstElement() {
-        return listOfTagsOfFirstElement.getAllText();
+        return listOfTagsOfFirstElement.getListOfText();
+
     }
 }
