@@ -17,28 +17,6 @@ public class GameInfo {
         this.price = price;
         this.tags = tags;
     }
-    public GameInfo getGameInfo() {
-        String name = this.name;
-        String reviewStatus = this.reviewStatus;
-        String price = this.price;
-        List<String> tags = this.tags;
-
-        return new GameInfo(name, reviewStatus, price, tags);
-    }
-    public String getName() {
-        return name;
-    }
-
-    public String getReviewStatus() {
-        return reviewStatus;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-    public List<String> getTags() {
-        return tags;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

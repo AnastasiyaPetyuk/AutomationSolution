@@ -14,7 +14,7 @@ public class VerifyGameInfoTest extends BaseTest{
     @Test(description = "ST_ID 3: Verify that game info from the main page is the same as info on the game’s page")
     public void verifyGameInfoTest() {
         mainPage.scrollDownToLabelNewAndTrending();
-        GameInfo gameInfoFromMainPage = mainPageSteps.getGameInfoFromMainPage().getGameInfo();
+        GameInfo gameInfoFromMainPage = mainPageSteps.getGameInfoFromMainPage();
         GameInfo gameInfoFromGamePage = gamePageSteps.getGameInfoFromGamePage();
         Assert.assertTrue(gameInfoFromMainPage.equals(gameInfoFromGamePage));
     }
