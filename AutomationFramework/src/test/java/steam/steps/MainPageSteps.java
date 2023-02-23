@@ -1,6 +1,7 @@
 package steam.steps;
 
 import framework.utils.GetProperties;
+import io.qameta.allure.Step;
 import steam.models.GameInfo;
 import steam.pages.MainPage;
 
@@ -13,6 +14,7 @@ import java.util.stream.Stream;
 public class MainPageSteps {
     public static final Logger logger = Logger.getLogger(MainPageSteps.class.getName());
 
+    @Step("check equals of categories")
     public boolean equalsListOfCategories(List<String> listOfCategories) {
         logger.info("check equals of categories in field ");
         MainPage mainPage = new MainPage();
@@ -30,6 +32,7 @@ public class MainPageSteps {
         return true;
     }
 
+    @Step("get game info from main page")
     public GameInfo getGameInfoFromMainPage() {
         logger.info("Observe info of the game from the list");
         MainPage mainPage = new MainPage();

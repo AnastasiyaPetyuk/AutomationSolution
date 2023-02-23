@@ -3,6 +3,7 @@ package steam.pages;
 import framework.page.BasePage;
 import framework.pageElements.Label;
 import framework.pageElements.ListOfElements;
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class SpecialOffersPage extends BasePage {
     public SpecialOffersPage() {
         uniqueElement = specialOffersPageUniqueLabel;
     }
+    @Step("scroll down to List Of Offers")
     public void scrollDownToListOfOffers() {
         allItemsCategory.scrollDownToElement();
     }

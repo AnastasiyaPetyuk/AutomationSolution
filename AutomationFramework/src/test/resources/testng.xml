@@ -10,7 +10,7 @@
             <class name="steam.tests.ValidateCategoriesTest"/>
         </classes>
     </test>
-    <test  name="VerifyGameInfo" enabled="false">
+    <test  name="VerifyGameInfo" >
         <classes>
             <class name="steam.tests.VerifyGameInfoTest"/>
         </classes>

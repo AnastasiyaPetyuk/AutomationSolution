@@ -7,6 +7,7 @@ import framework.pageElements.Button;
 import framework.pageElements.Label;
 import framework.pageElements.ListOfElements;
 import framework.utils.MyWaiters;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -39,15 +40,19 @@ public class MainPage extends BasePage {
         WebElement element = Browser.getDriver().findElement(arcadeAndRhythmLocator);
         MyWaiters.waitForTextToBePresentInElement(element, "Arcade & Rhythm");
     }
+    @Step("hover on 'Categories'")
     public void hoverOnCategories() {
         categoriesButton.moveCursorToElement();
     }
+    @Step("hover on 'New & Noteworthy'")
     public void hoverOnNewAndNoteworthy() {
         newAndNoteworthyButton.moveCursorToElement();
     }
+    @Step("click to 'Special Offers'")
     public void clickToSpecialOffers() {
         specialOffersButton.click();
     }
+    @Step("scroll down to label 'New & Trending'")
     public void scrollDownToLabelNewAndTrending() {
         newAndTrendingLabel.scrollDownToElement();
     }

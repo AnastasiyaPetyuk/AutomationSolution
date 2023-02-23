@@ -1,6 +1,7 @@
 package steam.steps;
 
 import framework.constants.Regex;
+import io.qameta.allure.Step;
 import steam.pages.SpecialOffersPage;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.logging.Logger;
 public class SpecialOffersPageSteps {
     public static final Logger logger = Logger.getLogger(MainPageSteps.class.getName());
 
+    @Step("validate calculating of discounts")
     public boolean validateCalculatingOfDiscounts() {
         logger.info("convert list of WebElements to ArrayList");
         SpecialOffersPage specialOffersPage = new SpecialOffersPage();
