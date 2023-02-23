@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MySuite" parallel="false">
+    <test  name="CalculateDiscounts">
+        <classes>
+            <class name="steam.tests.CalculateDiscountsTest"/>
+        </classes>
+    </test>
+    <test  name="discountTest">
+        <classes>
+            <class name="steam.tests.ValidateCategoriesTest"/>
+        </classes>
+    </test>
+    <test  name="VerifyGameInfo" enabled="false">
+        <classes>
+            <class name="steam.tests.VerifyGameInfoTest"/>
+        </classes>
+    </test>
+
+
+</suite>
