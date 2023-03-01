@@ -1,12 +1,9 @@
 package framework.driver;
 
-import framework.utils.GetProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.time.Duration;
 
 public class Browser {
     private static WebDriver driver;
@@ -22,8 +19,6 @@ public class Browser {
             options.addArguments("--window-size=1920,1200");
             options.addArguments("--lang=en");
             driver = new ChromeDriver(options);
-            driver.get(GetProperties.getProperties("config", "mainUrl"));
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
         return driver;
     }

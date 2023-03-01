@@ -15,6 +15,11 @@
             <class name="steam.tests.VerifyGameInfoTest"/>
         </classes>
     </test>
+    <test name="AddPostFromApi" >
+        <classes>
+            <class  name="vk.tests.AddPostFromApiTest"/>
+        </classes>
+    </test>
 
 
 </suite>
