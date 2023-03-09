@@ -24,6 +24,10 @@ public abstract class BaseElement {
         webElement = MyWaiters.waitForElementToBeVisible(locator);
         return webElement.getText();
     }
+    public void sendText(String str) {
+        webElement = MyWaiters.waitForElementToBeVisible(locator);
+        webElement.sendKeys(str);
+    }
     public boolean isDisplayed() {
         MyWaiters.waitForElementToBeVisible(locator);
         return webElement.isDisplayed();
