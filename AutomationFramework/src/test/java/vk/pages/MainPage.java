@@ -8,9 +8,9 @@ public class MainPage {
     Label enterEmailLabel = new Label(By.id("index_email"));
     Button enterButton = new Button(By.xpath("//button[contains(@class, 'VkIdForm__signInButton')]"));
     Label passwordlabel = new Label(By.name("password"));
-    Button continueButton = new Button(By.xpath("//span[@class=\"vkuiButton__in\"]"));
-    Label myPageButton = new Label(By.xpath("//span[@class=\"LeftMenu__itemLabel\"][contains(text(), \"Моя страница\")]"));
-    Label textFromLastPost = new Label(By.xpath("//div[@class=\"wall_post_text zoom_text\"]"));
+    Button continueButton = new Button(By.xpath("//span[@class='vkuiButton__in']"));
+    Label myPageButton = new Label(By.xpath("//span[@class='LeftMenu__itemLabel'][contains(text(), 'Моя страница')]"));
+    Label textFromLastPost = new Label(By.xpath("//div[@class='wall_post_text zoom_text']"));
 
     public void enterEmail(String email) {
         enterEmailLabel.sendText(email);
